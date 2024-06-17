@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Stock = ({ stock, handleClick,selected}) => {
+const Stock = ({ stock, handleClick,selected,sector}) => {
     let action = 'add'
     if(selected){
         action = 'remove'
@@ -15,6 +15,7 @@ const Stock = ({ stock, handleClick,selected}) => {
           <span style={{ color: 'green', margin:'10px', fontSize:'20px' }}>{stock.price}</span>
           <br />
           </div>
+          <span style={{ color: 'white', margin:'0px 0px 5px 10px', fontSize:'12px' }}>{sector}</span>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
           <button 
             onClick={() => handleClick(stock)}  

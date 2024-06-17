@@ -67,7 +67,7 @@ const MainComp = () => {
       sumOfWeights = sumOfWeights + w * w;
     }
     const DI = (1 - sumOfWeights) * 100;
-    setDI(DI);
+    setDI(DI.toFixed(2));
   };
 
   // Effect to calculate the diversity index whenever selected stocks change
@@ -127,7 +127,7 @@ const MainComp = () => {
               <span style={{ color: 'white', fontSize: '20px' }}><b>SELECTED STOCKS</b></span>
             </div>
             <div style={{ display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap' }}>
-              {selected.map(item => <Stock key={item} handleClick={addremoveItem} selected={true} stock={{ 'name': item, 'price': prices[item] }} />)}
+              {selected.map(item => <Stock key={item} sector={dow30Sectors[item]} handleClick={addremoveItem} selected={true} stock={{ 'name': item, 'price': prices[item] }} />)}
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@ const MainComp = () => {
           <span style={{ color: 'white', fontSize: '20px' }}><b>DOW30 STOCKS</b></span>
         </div>
         <div style={{ display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap' }}>
-          {Object.keys(prices).map(item => <Stock key={item} handleClick={addremoveItem} selected={selected.includes(item)} stock={{ 'name': item, 'price': prices[item] }} />)}
+          {Object.keys(prices).map(item => <Stock key={item} handleClick={addremoveItem} sector={dow30Sectors[item]} selected={selected.includes(item)} stock={{ 'name': item, 'price': prices[item] }} />)}
         </div>
       </div>
     </div>
