@@ -33,10 +33,4 @@ The `MainComp` component is a React functional component designed to manage and 
 - **React**: A JavaScript library for building user interfaces.
 - **Finnhub API**: Used to fetch real-time stock prices.
 
-## Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
 
